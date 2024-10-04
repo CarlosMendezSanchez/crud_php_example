@@ -1,22 +1,22 @@
 <?php
 include 'config.php';
 
-$stmt = $pdo->query('SELECT * FROM jabones');
-$jabones = $stmt->fetchAll();
+$stmt = $pdo->query('SELECT * FROM libro');
+$libro = $stmt->fetchAll();
 ?>
 
-<h2>Listado de Jabones</h2>
+<h2>Listado de libros</h2>
 
 <!-- Botón para crear un nuevo jabón -->
-<a href="create.php">Crear nuevo Jabón</a>
+<a href="create.php">Crear nuevo libro</a>
 <br><br>
 
 <ul>
-<?php foreach ($jabones as $jabon): ?>
+<?php foreach ($libro as $librito): ?>
     <li>
-        <?php echo $jabon['nombre']; ?> - $<?php echo $jabon['precio']; ?>
-        <a href="edit.php?id=<?php echo $jabon['id']; ?>">Editar</a>
-        <a href="delete.php?id=<?php echo $jabon['id']; ?>">Eliminar</a>
+        <?php echo $librito['nombre']; ?> - $<?php echo $librito['precio']; ?>
+        <a href="edit.php?id=<?php echo $librito['id']; ?>">Editar</a>
+        <a href="delete.php?id=<?php echo $librito['id']; ?>">Eliminar</a>
     </li>
 <?php endforeach; ?>
 </ul>
